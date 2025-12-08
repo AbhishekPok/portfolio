@@ -165,7 +165,7 @@ const About = () => {
                                 <p className="text-[#64748B] leading-relaxed">{value.description}</p>
 
                                 {/* Accent bar */}
-                                <div className="absolute bottom-0 left-0 h-1.5 bg-gradient-to-r from-[#2563EB] to-[#0F172A] rounded-full w-0 group-hover:w-full transition-all duration-700"></div>
+                                <div className="absolute bottom-4 left-4 right-4 h-1.5 bg-gradient-to-r from-[#2563EB] to-[#0F172A] rounded-full w-0 group-hover:w-[calc(100%-2rem)] transition-all duration-700"></div>
                             </motion.div>
                         ))}
                     </div>
