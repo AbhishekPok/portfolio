@@ -77,7 +77,7 @@ export function About() {
                 {/* Image container */}
                 <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl shadow-[#2563EB]/20 bg-white">
                   <img
-                    src={`${import.meta.env.BASE_URL}img/profile.jpg`}
+                    src={`${import.meta.env.BASE_URL}img/profile.webp`}
                     alt="Abhishek Pokhrel"
                     className="w-full h-full object-cover"
                   />
