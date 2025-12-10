@@ -12,16 +12,16 @@ const Footer = () => {
                     </div>
 
                     <div className="flex gap-6">
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                        <a href="https://github.com/AbhishekPok" className="text-gray-400 hover:text-primary transition-colors">
                             <Github size={24} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                        <a href="https://www.linkedin.com/in/abhishekpokhrel001" className="text-gray-400 hover:text-primary transition-colors">
                             <Linkedin size={24} />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                            <Twitter size={24} />
-                        </a>
-                        <a href="mailto:contact@example.com" className="text-gray-400 hover:text-primary transition-colors">
+                        {/* <a href="#" className="text-gray-400 hover:text-primary transition-colors"> */}
+                        {/* <Twitter size={24} /> */}
+                        {/* </a> */}
+                        <a href="mailto:abhishekpokhrel001@gmail.com" className="text-gray-400 hover:text-primary transition-colors">
                             <Mail size={24} />
                         </a>
                     </div>
