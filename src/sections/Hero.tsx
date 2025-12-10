@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ArrowRight, Terminal } from 'lucide-react';
 import { motion } from 'framer-motion';
 

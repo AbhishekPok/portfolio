@@ -49,14 +49,14 @@ const About = () => {
                         transition={{ duration: 0.6 }}
                         className="relative lg:mt-16"
                     >
-                        <div className="relative mx-auto w-96 h-96 lg:w-[30rem] lg:h-[30rem]">
+                        <div className="relative mx-auto w-full max-w-[20rem] aspect-[3/4] lg:max-w-[24rem]">
                             {/* Glow effect */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB] to-[#0F172A] rounded-[3rem] blur-2xl opacity-20"></div>
+                            <div className="absolute inset-0 bg-gradient-to-br from-[#2563EB] to-[#0F172A] rounded-[2rem] blur-2xl opacity-20"></div>
 
                             {/* Image container */}
-                            <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-4 border-white shadow-2xl shadow-[#2563EB]/20 bg-white">
+                            <div className="relative w-full h-full rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl shadow-[#2563EB]/20 bg-white">
                                 <img
-                                    src={`${import.meta.env.BASE_URL}img/profile.webp`}
+                                    src={`${import.meta.env.BASE_URL}img/profile_new.webp`}
                                     alt="Abhishek Pokhrel"
                                     className="w-full h-full object-cover"
                                 />
@@ -67,12 +67,12 @@ const About = () => {
                             <motion.div
                                 animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
                                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                                className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-[#2563EB] to-[#0F172A] rounded-3xl -z-10 shadow-xl shadow-[#2563EB]/40"
+                                className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-[#2563EB] to-[#0F172A] rounded-2xl -z-10 shadow-xl shadow-[#2563EB]/40"
                             ></motion.div>
                             <motion.div
                                 animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
                                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                                className="absolute -bottom-4 -left-4 w-20 h-20 bg-[#0F172A] rounded-3xl -z-10 shadow-xl shadow-[#0F172A]/40"
+                                className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#0F172A] rounded-2xl -z-10 shadow-xl shadow-[#0F172A]/40"
                             ></motion.div>
                         </div>
                     </motion.div>
