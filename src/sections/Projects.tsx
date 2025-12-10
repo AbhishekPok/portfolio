@@ -1,5 +1,4 @@
-import React from 'react';
-import GlassCard from '../components/GlassCard';
+
 import { Server, Container, Workflow, Cloud, ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -36,11 +35,11 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="py-20 bg-white relative">
+        <section id="projects" className="py-20 bg-background relative">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold mb-4">DevOps <span className="text-primary">Projects</span></h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-bold mb-4 text-white">DevOps <span className="text-primary">Projects</span></h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto">
                         Practical implementations of infrastructure automation, containerization, and orchestration.
                     </p>
                 </div>
@@ -54,10 +53,13 @@ const Projects = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <GlassCard className="h-full border-t-4 border-t-primary/50 hover:border-t-primary transition-colors group">
+                            <div className="group relative h-full flex flex-col p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl hover:border-primary hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
                                 <div className="flex justify-between items-start mb-4">
-                                    <div className="p-3 bg-gray-50 rounded-lg group-hover:bg-blue-50 transition-colors">
-                                        {project.icon}
+                                    <div className="relative">
+                                        <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                            {project.icon}
+                                        </div>
+                                        <div className="absolute inset-0 bg-primary rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                     </div>
                                     <div className="flex gap-2">
                                         <a href={project.link} className="p-2 text-gray-400 hover:text-primary transition-colors">
@@ -69,24 +71,25 @@ const Projects = () => {
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-gray-600 mb-6 line-clamp-3">
+                                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-primary transition-colors">{project.title}</h3>
+                                <p className="text-gray-400 mb-6 line-clamp-3">
                                     {project.description}
                                 </p>
 
                                 <div className="flex flex-wrap gap-2 mt-auto">
                                     {project.tags.map((tag, i) => (
-                                        <span key={i} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-medium rounded-full">
+                                        <span key={i} className="px-3 py-1 bg-white/5 text-gray-300 border border-white/10 text-xs font-medium rounded-full">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
-                            </GlassCard>
+
+                            </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

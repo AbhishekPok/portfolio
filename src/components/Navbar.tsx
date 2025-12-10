@@ -41,7 +41,7 @@ const Navbar = ({ lenis }: NavbarProps) => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-4'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md shadow-sm py-2 border-b border-white/10' : 'bg-transparent py-4'
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
@@ -57,7 +57,7 @@ const Navbar = ({ lenis }: NavbarProps) => {
                             key={link.name}
                             href={link.href}
                             onClick={(e) => handleNavClick(e, link.href)}
-                            className="flex items-center gap-2 text-secondary/80 hover:text-primary transition-colors font-medium"
+                            className="flex items-center gap-2 text-gray-300 hover:text-primary transition-colors font-medium"
                         >
                             {link.icon}
                             {link.name}
@@ -66,7 +66,7 @@ const Navbar = ({ lenis }: NavbarProps) => {
                     <a
                         href={`${import.meta.env.BASE_URL}resume/Abhishek_CV.pdf`}
                         download="Abhishek_CV.pdf"
-                        className="flex items-center gap-2 px-4 py-2 bg-white border border-[#E2E8F0] text-secondary rounded-lg hover:border-[#2563EB] hover:text-[#2563EB] transition-colors"
+                        className="flex items-center gap-2 px-4 py-2 bg-transparent border border-white/20 text-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors"
                     >
                         <Download size={18} />
                         Resume
@@ -82,7 +82,7 @@ const Navbar = ({ lenis }: NavbarProps) => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-secondary"
+                    className="md:hidden text-gray-300"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X /> : <Menu />}
@@ -91,13 +91,13 @@ const Navbar = ({ lenis }: NavbarProps) => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 p-4 shadow-lg">
+                <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-white/10 p-4 shadow-lg">
                     <div className="flex flex-col gap-4">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="flex items-center gap-3 text-secondary/80 hover:text-primary py-2"
+                                className="flex items-center gap-3 text-gray-300 hover:text-primary py-2"
                                 onClick={(e) => handleNavClick(e, link.href)}
                             >
                                 {link.icon}
@@ -107,7 +107,7 @@ const Navbar = ({ lenis }: NavbarProps) => {
                         <a
                             href={`${import.meta.env.BASE_URL}resume/Abhishek_CV.pdf`}
                             download="Abhishek_CV.pdf"
-                            className="flex items-center gap-3 text-secondary/80 hover:text-primary py-2"
+                            className="flex items-center gap-3 text-gray-300 hover:text-primary py-2"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             <Download size={18} />

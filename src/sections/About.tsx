@@ -96,16 +96,16 @@ const About = () => {
                             <span className="text-sm text-[#2563EB]">Get to know me</span>
                         </motion.div>
 
-                        <h2 className="text-4xl lg:text-5xl font-bold text-[#0F172A] mb-6">
+                        <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
                             About Me
                         </h2>
 
-                        <p className="text-lg text-[#64748B] leading-relaxed">
+                        <p className="text-lg text-gray-300 leading-relaxed">
                             I'm a passionate software engineer with expertise in DevOps, cloud infrastructure,
                             and backend development. My journey in technology started with a curiosity about
                             automation and efficiency, which led me to specialize in building scalable systems.
                         </p>
-                        <p className="text-lg text-[#64748B] leading-relaxed">
+                        <p className="text-lg text-gray-300 leading-relaxed">
                             Throughout my career, I've focused on automating deployment processes, managing
                             cloud infrastructure, and developing robust backend applications. I believe in
                             writing clean code, implementing best practices, and continuously learning new
@@ -113,7 +113,7 @@ const About = () => {
                         </p>
 
                         <div className="pt-6">
-                            <h3 className="text-2xl text-[#0F172A] mb-6">What I Focus On</h3>
+                            <h3 className="text-2xl text-white mb-6">What I Focus On</h3>
                             <div className="grid grid-cols-1 gap-3">
                                 {focuses.map((focus, index) => (
                                     <motion.div
@@ -122,10 +122,10 @@ const About = () => {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
-                                        className="group flex items-center gap-4 p-4 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl hover:border-[#2563EB] hover:bg-white hover:shadow-lg hover:shadow-[#2563EB]/10 transition-all duration-300"
+                                        className="group flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:border-primary hover:bg-white/10 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
                                     >
-                                        <div className="w-3 h-3 bg-gradient-to-br from-[#2563EB] to-[#0F172A] rounded-full group-hover:scale-125 transition-transform"></div>
-                                        <span className="text-[#64748B] group-hover:text-[#0F172A] transition-colors">{focus}</span>
+                                        <div className="w-3 h-3 bg-primary rounded-full shadow-[0_0_10px_rgba(64,224,208,0.6)] group-hover:scale-125 transition-transform"></div>
+                                        <span className="text-gray-300 group-hover:text-white transition-colors">{focus}</span>
                                     </motion.div>
                                 ))}
                             </div>
@@ -141,7 +141,7 @@ const About = () => {
                     transition={{ duration: 0.6 }}
                     className="mt-24"
                 >
-                    <h2 className="text-3xl text-[#0F172A] text-center mb-12">Core Values</h2>
+                    <h2 className="text-3xl text-primary text-center mb-12">Core Values</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {values.map((value, index) => (
                             <motion.div
@@ -150,22 +150,22 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group relative p-8 bg-white/50 backdrop-blur-sm border border-[#E2E8F0] rounded-3xl hover:border-[#2563EB] hover:shadow-2xl hover:shadow-[#2563EB]/10 transition-all duration-500"
+                                className="group relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl hover:border-primary hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
                             >
                                 {/* Icon container */}
                                 <div className="relative mb-6">
-                                    <div className="w-16 h-16 bg-gradient-to-br from-[#EFF6FF] to-[#F8FAFC] border border-[#2563EB]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
-                                        <value.icon className="w-7 h-7 text-[#2563EB]" />
+                                    <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                                        <value.icon className="w-7 h-7 text-primary" />
                                     </div>
-                                    <div className="absolute inset-0 bg-[#2563EB] rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    <div className="absolute inset-0 bg-primary rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-xl text-[#0F172A] mb-3">{value.title}</h3>
-                                <p className="text-[#64748B] leading-relaxed">{value.description}</p>
+                                <h3 className="text-xl text-white mb-3">{value.title}</h3>
+                                <p className="text-gray-400 leading-relaxed">{value.description}</p>
 
                                 {/* Accent bar */}
-                                <div className="absolute bottom-4 left-4 right-4 h-1.5 bg-gradient-to-r from-[#2563EB] to-[#0F172A] rounded-full w-0 group-hover:w-[calc(100%-2rem)] transition-all duration-700"></div>
+
                             </motion.div>
                         ))}
                     </div>

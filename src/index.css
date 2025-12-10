@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    @apply bg-white text-secondary font-sans antialiased;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    @apply bg-background text-white font-sans antialiased;
+    background: #000000;
     min-height: 100vh;
   }
 }
@@ -20,7 +20,7 @@
   }
 
   .neon-text {
-    text-shadow: 0 0 10px rgba(18, 135, 224, 0.5);
+    text-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
   }
   
   .floating-window {

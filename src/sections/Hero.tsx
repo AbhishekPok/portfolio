@@ -27,10 +27,10 @@ const Hero = () => {
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                         Hi, I'm <span className="text-primary">Abhishek</span>
                         <br />
-                        <span className="text-secondary">DevOps Engineer</span>
+                        <span className="text-primary neon-text">DevOps Engineer</span>
                     </h1>
 
-                    <p className="text-xl text-gray-600 mb-8 max-w-lg">
+                    <p className="text-xl text-gray-200 mb-8 max-w-lg">
                         I build automation, infrastructure, and high-performance Linux setups.
                         Turning chaos into code, one pipeline at a time.
                     </p>

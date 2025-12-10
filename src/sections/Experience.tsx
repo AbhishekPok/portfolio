@@ -30,15 +30,14 @@ const Experience = () => {
                         <span className="text-sm text-[#2563EB]">Career Journey</span>
                     </motion.div>
 
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#0F172A] mb-6">
-                        Work Experience
+                    <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                        Work <span className="text-primary">Experience</span>
                     </h2>
-                    <div className="h-1 w-32 bg-gradient-to-r from-[#2563EB] to-[#0F172A] rounded-full mx-auto"></div>
                 </motion.div>
 
                 <div className="relative">
                     {/* Vertical Line */}
-                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#2563EB] via-[#0F172A] to-transparent opacity-20"></div>
+                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-primary/30 shadow-[0_0_10px_rgba(64,224,208,0.3)]"></div>
 
                     <div className="space-y-12">
                         {experienceData.map((item, index) => (
@@ -52,22 +51,22 @@ const Experience = () => {
                                     }`}
                             >
                                 {/* Timeline Dot */}
-                                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white border-4 border-[#2563EB] rounded-full z-10 mt-1.5"></div>
+                                <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-background border-4 border-primary rounded-full z-10 mt-1.5 shadow-[0_0_15px_rgba(64,224,208,0.8)]"></div>
 
                                 {/* Content Card */}
                                 <div className="ml-8 md:ml-0 md:w-1/2">
-                                    <div className={`p-6 bg-white/50 backdrop-blur-sm border border-[#E2E8F0] rounded-2xl hover:border-[#2563EB] hover:shadow-xl hover:shadow-[#2563EB]/10 transition-all duration-300 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'
+                                    <div className={`p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-[#2563EB] hover:shadow-xl hover:shadow-[#2563EB]/10 transition-all duration-300 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'
                                         }`}>
                                         <div className={`flex items-center gap-2 text-[#2563EB] mb-2 ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'
                                             }`}>
                                             <Calendar className="w-4 h-4" />
-                                            <span className="text-sm font-medium">{item.date}</span>
+                                            <span className="text-sm font-medium text-white">{item.date}</span>
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-[#0F172A] mb-1">{item.role}</h3>
-                                        <p className="text-[#64748B] font-medium mb-4">{item.company}</p>
+                                        <h3 className="text-xl font-bold text-white mb-1">{item.role}</h3>
+                                        <p className="text-gray-300 font-medium mb-4">{item.company}</p>
 
-                                        <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+                                        <p className="text-gray-300 text-sm leading-relaxed mb-4">
                                             {item.description}
                                         </p>
 
@@ -76,7 +75,7 @@ const Experience = () => {
                                             {item.technologies.map((tech) => (
                                                 <span
                                                     key={tech}
-                                                    className="px-2 py-1 text-xs text-[#2563EB] bg-[#EFF6FF] border border-[#2563EB]/20 rounded-full"
+                                                    className="px-2 py-1 text-xs text-[#2563EB] bg-[#EFF6FF]/10 border border-[#2563EB]/20 rounded-full"
                                                 >
                                                     {tech}
                                                 </span>

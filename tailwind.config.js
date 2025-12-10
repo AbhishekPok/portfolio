@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1287E0", // Blue
-        secondary: "#0A1A2F", // Navy Blue
-        background: "#FFFFFF", // White
-        surface: "rgba(255, 255, 255, 0.7)", // Glass effect base
+        primary: "#40E0D0", // Turquoise
+        secondary: "#111111", // Dark Grey
+        background: "#000000", // Black
+        surface: "rgba(20, 20, 20, 0.8)", // Dark Glass effect base
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

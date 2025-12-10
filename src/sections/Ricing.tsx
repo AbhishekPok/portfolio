@@ -1,5 +1,5 @@
 import React from 'react';
-import GlassCard from '../components/GlassCard';
+
 import { Layers, Command, Palette, Monitor, Terminal as TerminalIcon, X, Minimize2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
@@ -217,11 +217,11 @@ const Ricing = () => {
     ];
 
     return (
-        <section id="ricing" className="py-20 bg-gray-50 relative overflow-hidden">
+        <section id="ricing" className="py-20 bg-background relative overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold mb-4">Hyprland <span className="text-primary">Ricing</span></h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <h2 className="text-4xl font-bold mb-4 text-white">Hyprland <span className="text-primary">Ricing</span></h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto">
                         My Linux environment is more than just a tool—it's a personalized workspace optimized for speed and aesthetics.
                     </p>
                 </div>
@@ -246,15 +246,19 @@ const Ricing = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                             >
-                                <GlassCard className="h-full hover:-translate-y-1 transition-transform duration-300">
-                                    <div className="mb-4 p-3 bg-gray-50 rounded-lg inline-block">
-                                        {feature.icon}
+                                <div className="group relative h-full p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl hover:border-primary hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
+                                    <div className="relative mb-4 inline-block">
+                                        <div className="p-3 bg-white/5 rounded-2xl group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                            {feature.icon}
+                                        </div>
+                                        <div className="absolute inset-0 bg-primary rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                                     </div>
-                                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                                    <p className="text-gray-600 text-sm leading-relaxed">
+                                    <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
+                                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
                                         {feature.description}
                                     </p>
-                                </GlassCard>
+
+                                </div>
                             </motion.div>
                         ))}
                     </div>
