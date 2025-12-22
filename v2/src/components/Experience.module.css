@@ -1,0 +1,99 @@
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--color-border);
+}
+
+.timelineItem {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+}
+
+.timelineItem:last-child {
+    margin-bottom: 0;
+}
+
+.dot {
+    position: absolute;
+    top: 0.5rem;
+    left: -5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    border: 2px solid var(--color-bg);
+}
+
+.heading {
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.company {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+}
+
+.duration {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    opacity: 0.6;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.description {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.techBadge {
+    background-color: var(--color-secondary);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+.descriptionList {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+    list-style-type: none;
+}
+
+.descriptionList li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.descriptionList li::before {
+    content: "▹";
+    position: absolute;
+    left: -1.2rem;
+    color: var(--color-accent);
+}

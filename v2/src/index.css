@@ -1,0 +1,127 @@
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-accent: #40E0D0;
+  /* Turquoise */
+  --color-accent-dim: #40e0d040;
+  --color-secondary: #f3f4f6;
+  --color-border: #e5e7eb;
+
+  /* Card & Components */
+  --color-card-bg: #ffffff;
+  --color-card-border: #e5e7eb;
+  --color-card-hover: #f9fafb;
+  --color-text-muted: #6b7280;
+  --color-icon-bg: #f3f4f6;
+
+  /* Form Elements */
+  --color-input-bg: #ffffff;
+  --color-input-bg-focus: #f9fafb;
+  --color-input-border: #d1d5db;
+  --color-input-text: #1a1a1a;
+
+  --color-footer-bg: #f9fafb;
+
+  --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --nav-height: 3.5rem;
+}
+
+[data-theme='dark'] {
+  --color-bg: #0f1115;
+  /* Dark gray/black specific for terminal feel */
+  --color-text: #e5e7eb;
+  --color-secondary: #1f2937;
+  --color-border: #374151;
+
+  /* Card & Components - Dark */
+  --color-card-bg: #111;
+  --color-card-border: #222;
+  --color-card-hover: #151515;
+  --color-text-muted: #888;
+  --color-icon-bg: #1a1a1a;
+
+  /* Form Elements - Dark */
+  --color-input-bg: #1a1a1a;
+  --color-input-bg-focus: #222;
+  --color-input-border: #333;
+  --color-input-text: #eee;
+
+  --color-footer-bg: #0f1115;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.accent {
+  color: var(--color-accent);
+}

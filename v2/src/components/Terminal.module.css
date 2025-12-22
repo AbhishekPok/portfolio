@@ -1,0 +1,155 @@
+.terminalWrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    font-family: var(--font-mono);
+    perspective: 1000px;
+}
+
+.terminalWindow {
+    background-color: #1e1e1e;
+    /* Always dark for terminal authentic feel, or match theme? Prompt says light/dark mode. but terminal usually dark. User said "Light Mode: White background... except terminal sections?".
+  "Terminal-inspired UI... Light Mode: White background with turquoise accents...".
+  Actually, a terminal usually stays dark even in light themes or has a light theme.
+  I will make the terminal track the theme OR just stick to a "dracula" style which looks good on both.
+  Let's make it dark by default as real terminals usually are, but valid to have light.
+  I'll use a specific dark color for the terminal window to contrast with light mode background.
+  */
+    background-color: #151515;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* On light mode, maybe make it slightly distinct? Or just keep it dark as a "window". Keeping it dark is safer for "Terminal aesthetic". */
+
+.header {
+    background-color: #252526;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff5f56;
+    cursor: pointer;
+}
+
+.yellow {
+    background-color: #ffbd2e;
+    cursor: pointer;
+}
+
+.green {
+    background-color: #27c93f;
+    cursor: pointer;
+}
+
+.title {
+    margin-left: 1rem;
+    color: #9ca3af;
+    font-size: 0.8rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.body {
+    padding: 1.5rem;
+    height: 400px;
+    /* Fixed height or max-height */
+    overflow-y: auto;
+    color: #f3f4f6;
+    font-size: 0.95rem;
+    cursor: text;
+}
+
+/* Custom scrollbar for terminal body */
+.body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.body::-webkit-scrollbar-track {
+    background: #151515;
+}
+
+.body::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+.prompts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    /* Allow multiline output */
+    gap: 0.2rem;
+}
+
+.inputLine {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.promptLabel {
+    color: var(--color-accent);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.input {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    flex-grow: 1;
+    outline: none;
+    caret-color: var(--color-accent);
+}
+
+.output {
+    white-space: pre-wrap;
+    color: #d1d5db;
+    margin-left: 1rem;
+    /* Indent output slightly */
+    line-height: 1.5;
+}
+
+.minimized {
+    height: 40px;
+    /* Only header visible */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .terminalWrapper {
+        margin: 1rem;
+        width: auto;
+    }
+
+    .body {
+        height: 300px;
+    }
+}

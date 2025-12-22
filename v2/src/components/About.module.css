@@ -1,0 +1,115 @@
+.content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.highlight {
+    color: var(--color-accent);
+}
+
+.profileImage {
+    /* Placeholder for profile image logic */
+    width: 100%;
+    max-width: 300px;
+    height: 380px;
+    /* Rectangular portrait aspect ratio */
+    background-color: transparent;
+    border-radius: 4px;
+    /* Slight radius for modern look, but effectively rectangular */
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    /* Ensure image fits */
+}
+
+.profileImage::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-text);
+    border-radius: 4px;
+    z-index: -1;
+    transition: all 0.2s ease;
+}
+
+.profileImage:hover::after {
+    top: 10px;
+    left: 10px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .profileImage {
+        margin: 0 auto;
+    }
+}
+
+.profileImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    /* Initial state: Grayscale */
+    filter: grayscale(100%) contrast(1.1);
+    opacity: 0.9;
+    /* Animation: name duration timing-function delay fill-mode */
+    animation: colorize 2s ease-out 3s forwards;
+}
+
+@keyframes colorize {
+    0% {
+        filter: grayscale(100%) contrast(1.1);
+        opacity: 0.9;
+    }
+
+    100% {
+        filter: grayscale(0%) contrast(1);
+        opacity: 1;
+    }
+}
+
+/* Optional: Keep hover effect immediate if user hovers before 3s? 
+   User said "black and white on load and after 3 sec, gradually recolorized".
+   This implies the final state is color. Hover effect is less relevant after that.
+   I will remove the specific hover rule to avoid conflict/jumping during animation.
+*/
+
+/* Update offset border to be independent of the image container's overflow hidden */
+.profileWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.profileWrapper::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-accent);
+    border-radius: 4px;
+    z-index: 0;
+    transition: all 0.2s ease;
+}
+
+.profileWrapper:hover::after {
+    top: 15px;
+    left: 15px;
+}

@@ -1,0 +1,124 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    /* Dark background */
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-card-border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    cursor: default;
+}
+
+/* Neon Glow Effect */
+.card:hover {
+    border-color: #4fd1c5;
+    box-shadow: 0 0 20px rgba(79, 209, 197, 0.15), inset 0 0 20px rgba(79, 209, 197, 0.05);
+    transform: translateY(-5px);
+    background-color: var(--color-card-hover);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.iconBox {
+    background-color: var(--color-icon-bg);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #4fd1c5;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.card:hover .iconBox {
+    border-color: #4fd1c5;
+    background-color: #4fd1c5;
+    color: #fff;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+}
+
+.links a {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    color: #4fd1c5;
+}
+
+.title {
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text);
+    transition: color 0.3s;
+}
+
+.card:hover .title {
+    color: #4fd1c5;
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    padding-left: 1.2rem;
+    margin-top: 0;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tag {
+    background-color: #1a1a1a;
+    /* Initially dark tag for projects maybe? Or stick to Teal Pill */
+    /* Let's stick to the consistency of the image provided = Teal Pill */
+    background-color: rgba(79, 209, 197, 0.1);
+    /* Subtle teal tint */
+    color: #4fd1c5;
+    border: 1px solid rgba(79, 209, 197, 0.2);
+
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    transition: all 0.2s;
+}
+
+/* Option: Solid teal tags on card hover? Or just always? 
+   Ref image shows solid teal tags. Let's make them solid teal for high contrast.
+*/
+.tag {
+    background-color: #4fd1c5;
+    color: #000;
+    border: none;
+    font-weight: 600;
+}

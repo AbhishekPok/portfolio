@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 17 17 17;
+    --primary: 64 224 208;
+    --secondary: 240 240 240;
+    --surface: 255 255 255;
+    --surface-glass: 255 255 255;
+    --muted: 240 240 240;
+    --muted-foreground: 100 116 139;
+    /* Slate 500 */
+  }
+
+  .dark {
+    --background: 0 0 0;
+    --foreground: 255 255 255;
+    --primary: 64 224 208;
+    --secondary: 17 17 17;
+    --surface: 20 20 20;
+    --surface-glass: 20 20 20;
+    --muted: 30 30 30;
+    --muted-foreground: 161 161 170;
+    /* Zinc 400 */
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-black/30 backdrop-blur-md border border-neutral-200 dark:border-white/10 shadow-xl rounded-xl;
+  }
+
+  .glass-card {
+    @apply bg-white/60 dark:bg-black/20 backdrop-blur-sm border border-neutral-200/50 dark:border-white/10 shadow-lg rounded-2xl hover:bg-white/80 dark:hover:bg-black/30 transition-all duration-300;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
+  }
+
+  .floating-window {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

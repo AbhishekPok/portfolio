@@ -1,0 +1,117 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--color-bg);
+    /* Opaque for now, can be glassmorphism */
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.link:hover {
+    color: var(--color-accent);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.resumeBtn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.resumeBtn:hover {
+    background: var(--color-accent-dim);
+}
+
+.themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--color-text);
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.themeToggle:hover {
+    color: var(--color-accent);
+}
+
+.mobileMenuBtn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .links {
+        display: none;
+        /* Add state-based class for open */
+    }
+
+    .links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: 2rem 0;
+    }
+
+    .mobileMenuBtn {
+        display: block;
+    }
+}

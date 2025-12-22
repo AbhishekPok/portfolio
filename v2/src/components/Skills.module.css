@@ -1,0 +1,90 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.categoryCard {
+    background-color: var(--color-card-bg);
+    /* Dark background */
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-card-border);
+    /* Subtle border initially */
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Neon Glow Effect on Hover */
+.categoryCard:hover {
+    border-color: #4fd1c5;
+    box-shadow: 0 0 20px rgba(79, 209, 197, 0.15), inset 0 0 20px rgba(79, 209, 197, 0.05);
+    background-color: var(--color-card-hover);
+    transform: scale(0.98);
+}
+
+.iconBox {
+    background-color: var(--color-icon-bg);
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #4fd1c5;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.categoryCard:hover .iconBox {
+    border-color: #4fd1c5;
+    color: #fff;
+    background-color: #4fd1c5;
+}
+
+.categoryTitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: #4fd1c5;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    /* Push tags to bottom */
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.tag {
+    background-color: #4fd1c5;
+    color: #000;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    /* Pill shape */
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    transition: transform 0.2s;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+}
