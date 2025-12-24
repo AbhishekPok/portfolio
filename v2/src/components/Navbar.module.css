@@ -106,12 +106,39 @@
         top: var(--nav-height);
         left: 0;
         width: 100%;
+        min-height: calc(100vh - var(--nav-height));
         background-color: var(--color-bg);
         border-bottom: 1px solid var(--color-border);
-        padding: 2rem 0;
+        padding: 3rem 1.5rem;
+        gap: 2.5rem;
+        align-items: flex-start;
+        z-index: 1000;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .link {
+        font-size: 1.25rem;
+        width: 100%;
+    }
+
+    .themeToggle {
+        margin-left: 0;
+        margin-top: 1rem;
     }
 
     .mobileMenuBtn {
         display: block;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }

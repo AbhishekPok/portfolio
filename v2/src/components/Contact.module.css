@@ -1,4 +1,4 @@
-.contact {
+w.contact {
     padding-bottom: 8rem;
     max-width: 1000px;
     /* Wider container for the 2-col layout */
@@ -180,7 +180,8 @@
 /* --- Responsive --- */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
     .row {

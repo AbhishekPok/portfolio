@@ -55,6 +55,7 @@
 
     .profileImage {
         margin: 0 auto;
+        height: 320px;
     }
 }
 

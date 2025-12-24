@@ -78,6 +78,7 @@
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
 }
+
 .descriptionList {
     margin: 1rem 0;
     padding-left: 1.2rem;
@@ -96,4 +97,22 @@
     position: absolute;
     left: -1.2rem;
     color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        padding: 1rem 0;
+    }
+
+    .timelineItem {
+        padding-left: 1.5rem;
+    }
+
+    .duration {
+        font-size: 0.8rem;
+    }
+
+    .role {
+        font-size: 1.1rem;
+    }
 }

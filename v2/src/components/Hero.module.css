@@ -98,16 +98,6 @@
     color: #ffffff;
 }
 
-@media (max-width: 768px) {
-    .name {
-        font-size: 2.5rem;
-    }
-
-    .role {
-        font-size: 1.5rem;
-    }
-}
-
 .contentWrapper {
     flex: 1;
     z-index: 10;
@@ -271,4 +261,33 @@
 
 .animFloatDelay {
     animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Responsive Overrides at the bottom */
+@media (max-width: 968px) {
+    .visualsWrapper {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        margin-top: 3rem;
+        transform: scale(0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .role {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .visualsWrapper {
+        transform: scale(0.75);
+        margin-top: 1rem;
+        min-height: 300px;
+    }
 }
