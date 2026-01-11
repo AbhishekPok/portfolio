@@ -45,9 +45,9 @@ export const config = {
     },
     experience: [
         // {
-        //     company: "Tech Startups Inc.",
+        //     company: "Cloudaya LLC",
         //     role: "DevOps Intern",
-        //     duration: "2024 - Present",
+        //     duration: "Jan 2026 - Present",
         //     description: [
         //         "Assisted in containerizing legacy applications and setting up basic CI/CD pipelines using GitHub Actions."
         //     ],
