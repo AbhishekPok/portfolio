@@ -44,15 +44,15 @@ export const config = {
         },
     },
     experience: [
-        // {
-        //     company: "Cloudaya LLC",
-        //     role: "DevOps Intern",
-        //     duration: "Jan 2026 - Present",
-        //     description: [
-        //         "Assisted in containerizing legacy applications and setting up basic CI/CD pipelines using GitHub Actions."
-        //     ],
-        //     tech: ["Docker", "GitHub Actions", "Bash"],
-        // },
+        {
+            company: "Cloudaya LLC",
+            role: "DevOps Intern",
+            duration: "Jan 2026 - Present",
+            description: [
+                "Assisted in containerizing legacy applications and setting up basic CI/CD pipelines using GitHub Actions."
+            ],
+            tech: ["Docker", "GitHub Actions", "Bash", "AWS"],
+        },
         {
             company: "Insight Workshop",
             role: "Backend Intern",
