@@ -41,8 +41,8 @@ const Navbar: React.FC = () => {
                         </Link>
                     ))}
 
-                    <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
-                        Resumé
+                    <a href="/assets/Abhishek_CV.pdf" target="_blank" rel="noopener noreferrer" className={styles.resumeBtn}>
+                        Resume
                     </a>
 
                     <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Toggle Theme">
