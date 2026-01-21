@@ -5,7 +5,7 @@ import { config } from '../data/config';
 const About: React.FC = () => {
     return (
         <section id="about" className="section container">
-            <h2 className="mono"><span className="accent">01.</span> About Me</h2>
+            <h2><span className="gradient-text">About Me</span></h2>
 
             <div className={styles.content}>
                 <div className={styles.text}>
@@ -19,10 +19,10 @@ const About: React.FC = () => {
                     <p>
                         Here are a few technologies I have been working with recently:
                     </p>
-                    <ul className="mono" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(140px, 200px))', gap: '0.5rem', listStyle: 'none', padding: 0 }}>
-                        {config.skills.cloud.items.slice(0, 3).map(tech => <li key={tech}><span className="accent">▹</span> {tech}</li>)}
-                        {config.skills.containerization.items.slice(0, 3).map(tech => <li key={tech}><span className="accent">▹</span> {tech}</li>)}
-                        {config.skills.iac.items.slice(0, 2).map(tech => <li key={tech}><span className="accent">▹</span> {tech}</li>)}
+                    <ul className={styles.skillsList}>
+                        {config.skills.cloud.items.slice(0, 3).map(tech => <li key={tech}>{tech}</li>)}
+                        {config.skills.containerization.items.slice(0, 3).map(tech => <li key={tech}>{tech}</li>)}
+                        {config.skills.iac.items.slice(0, 2).map(tech => <li key={tech}>{tech}</li>)}
                     </ul>
                 </div>
 

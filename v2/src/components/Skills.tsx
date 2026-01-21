@@ -26,7 +26,7 @@ const formatCategory = (str: string) => {
 const Skills: React.FC = () => {
     return (
         <section id="skills" className="section container">
-            <h2 className="mono"><span className="accent">04.</span> Skills</h2>
+            <h2><span className="gradient-text">Skills & Technologies</span></h2>
             <div className={styles.grid}>
                 {Object.entries(config.skills).map(([category, details]) => (
                     <div key={category} className={styles.categoryCard}>

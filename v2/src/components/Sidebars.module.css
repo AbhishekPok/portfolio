@@ -1,0 +1,64 @@
+.sidebars {
+    position: fixed;
+    bottom: 0;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.sidebarLeft,
+.sidebarRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    pointer-events: all;
+}
+
+.sidebarLeft::after,
+.sidebarRight::after {
+    content: '';
+    width: 2px;
+    height: 120px;
+    background: var(--glass-border);
+}
+
+.sidebarLeft a,
+.sidebarRight a {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    transition: all var(--transition-base);
+    padding: 0.5rem;
+}
+
+.sidebarLeft a:hover,
+.sidebarRight a:hover {
+    color: var(--accent-primary);
+    transform: translateY(-4px);
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
+}
+
+.emailLink {
+    writing-mode: vertical-rl;
+    font-size: 0.875rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+    padding: 0.5rem;
+}
+
+.emailLink:hover {
+    color: var(--accent-primary);
+    transform: translateY(-4px);
+}
+
+/* Hide on mobile */
+@media (max-width: 1024px) {
+    .sidebars {
+        display: none;
+    }
+}

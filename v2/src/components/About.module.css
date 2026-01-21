@@ -1,116 +1,120 @@
 .content {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .text p {
-    margin-bottom: 1.5rem;
+    font-size: 1.0625rem;
     line-height: 1.8;
-    color: var(--color-text);
+    color: var(--text-secondary);
 }
 
-.highlight {
-    color: var(--color-accent);
+.text p .accent {
+    color: var(--accent-primary);
+    font-weight: var(--font-semibold);
+}
+
+/* Skills List */
+.skillsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    list-style: none;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+
+.skillsList li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.skillsList li::before {
+    content: '▹';
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    line-height: 0;
+}
+
+/* Profile Image */
+.profileWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .profileImage {
-    /* Placeholder for profile image logic */
-    width: 100%;
-    max-width: 300px;
-    height: 380px;
-    /* Rectangular portrait aspect ratio */
-    background-color: transparent;
-    border-radius: 4px;
-    /* Slight radius for modern look, but effectively rectangular */
     position: relative;
-    z-index: 10;
-    overflow: hidden;
-    /* Ensure image fits */
-}
-
-.profileImage::after {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: 15px;
     width: 100%;
-    height: 100%;
-    border: 2px solid var(--color-text);
-    border-radius: 4px;
-    z-index: -1;
-    transition: all 0.2s ease;
+    max-width: 350px;
+    aspect-ratio: 1;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass), 0 0 40px rgba(99, 102, 241, 0.2);
+    transition: all var(--transition-base);
 }
 
-.profileImage:hover::after {
-    top: 10px;
-    left: 10px;
-}
-
-@media (max-width: 768px) {
-    .content {
-        grid-template-columns: 1fr;
-    }
-
-    .profileImage {
-        margin: 0 auto;
-        height: 320px;
-    }
+.profileImage:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glass), 0 0 60px rgba(99, 102, 241, 0.35);
+    border-color: var(--glass-border-hover);
 }
 
 .profileImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
-    /* Initial state: Grayscale */
-    filter: grayscale(100%) contrast(1.1);
-    opacity: 0.9;
-    /* Animation: name duration timing-function delay fill-mode */
-    animation: colorize 2s ease-out 3s forwards;
+    display: block;
+    filter: grayscale(20%) brightness(0.95);
+    transition: all var(--transition-base);
 }
 
-@keyframes colorize {
-    0% {
-        filter: grayscale(100%) contrast(1.1);
-        opacity: 0.9;
+.profileImage:hover .profileImg {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 
-    100% {
-        filter: grayscale(0%) contrast(1);
-        opacity: 1;
+    .profileImage {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
-/* Optional: Keep hover effect immediate if user hovers before 3s? 
-   User said "black and white on load and after 3 sec, gradually recolorized".
-   This implies the final state is color. Hover effect is less relevant after that.
-   I will remove the specific hover rule to avoid conflict/jumping during animation.
-*/
+@media (max-width: 768px) {
+    .content {
+        gap: 2rem;
+    }
 
-/* Update offset border to be independent of the image container's overflow hidden */
-.profileWrapper {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-}
+    .skillsList {
+        grid-template-columns: 1fr;
+    }
 
-.profileWrapper::after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--color-accent);
-    border-radius: 4px;
-    z-index: 0;
-    transition: all 0.2s ease;
-}
-
-.profileWrapper:hover::after {
-    top: 15px;
-    left: 15px;
+    .profileImage {
+        max-width: 250px;
+    }
 }

@@ -1,130 +1,202 @@
-.grid {
+.projectsList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
 }
 
-@media (max-width: 480px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-.card {
-    background-color: var(--color-card-bg);
-    /* Dark background */
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--color-card-border);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    cursor: default;
-}
-
-/* Neon Glow Effect */
-.card:hover {
-    border-color: #4fd1c5;
-    box-shadow: 0 0 20px rgba(79, 209, 197, 0.15), inset 0 0 20px rgba(79, 209, 197, 0.05);
-    transform: translateY(-5px);
-    background-color: var(--color-card-hover);
-}
-
-.cardHeader {
-    display: flex;
-    justify-content: space-between;
+.project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     align-items: center;
-    margin-bottom: 1.5rem;
+    position: relative;
 }
 
-.iconBox {
-    background-color: var(--color-icon-bg);
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+.project:nth-child(even) {
+    direction: rtl;
+}
+
+.project:nth-child(even)>* {
+    direction: ltr;
+}
+
+/* Image */
+.image {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+    aspect-ratio: 16 / 10;
+    transition: all var(--transition-base);
+}
+
+.project:hover .image {
+    transform: scale(1.02);
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--shadow-glass), 0 0 30px rgba(99, 102, 241, 0.25);
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    color: #4fd1c5;
-    border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
+    background: var(--gradient-primary);
+    color: var(--text-on-accent);
+    font-size: 4rem;
+    opacity: 0.8;
 }
 
-.card:hover .iconBox {
-    border-color: #4fd1c5;
-    background-color: #4fd1c5;
-    color: #fff;
+/* Content */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.featured {
+    font-size: 0.875rem;
+    color: var(--accent-tertiary);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: var(--font-extrabold);
+    margin: 0;
+}
+
+.title a {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all var(--transition-base);
+}
+
+.title a:hover {
+    filter: brightness(1.2);
+}
+
+.descriptionBox {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-glass), inset 0 1px 0 0 var(--glass-highlight);
+}
+
+.descriptionBox p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.descriptionBox ul {
+    margin: 0;
+    padding: 0 0 0 1.5rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.descriptionBox li {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.descriptionBox li::before {
+    content: '▹';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-top: 0.5rem;
+}
+
+.techList li {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.875rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.8125rem;
+    font-weight: var(--font-medium);
+    font-family: var(--font-mono);
+    color: var(--accent-primary);
+    list-style: none;
+    transition: all var(--transition-fast);
+}
+
+.techList li:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: scale(1.05);
 }
 
 .links {
     display: flex;
     gap: 1rem;
+    margin-top: 0.5rem;
 }
 
 .links a {
-    font-size: 1.25rem;
-    color: var(--color-text-muted);
-    transition: color 0.2s;
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    transition: all var(--transition-fast);
 }
 
 .links a:hover {
-    color: #4fd1c5;
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
 }
 
-.title {
-    margin: 0 0 1rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--color-text);
-    transition: color 0.3s;
+/* Responsive */
+@media (max-width: 1024px) {
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .project:nth-child(even) {
+        direction: ltr;
+    }
+
+    .image {
+        aspect-ratio: 16 / 9;
+    }
 }
 
-.card:hover .title {
-    color: #4fd1c5;
-}
+@media (max-width: 768px) {
+    .projectsList {
+        gap: 2rem;
+    }
 
-.description {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    padding-left: 1.2rem;
-    margin-top: 0;
-}
+    .title {
+        font-size: 1.5rem;
+    }
 
-.techStack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
-
-.tag {
-    background-color: #1a1a1a;
-    /* Initially dark tag for projects maybe? Or stick to Teal Pill */
-    /* Let's stick to the consistency of the image provided = Teal Pill */
-    background-color: rgba(79, 209, 197, 0.1);
-    /* Subtle teal tint */
-    color: #4fd1c5;
-    border: 1px solid rgba(79, 209, 197, 0.2);
-
-    padding: 0.4rem 0.8rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-family: var(--font-mono);
-    transition: all 0.2s;
-}
-
-/* Option: Solid teal tags on card hover? Or just always? 
-   Ref image shows solid teal tags. Let's make them solid teal for high contrast.
-*/
-.tag {
-    background-color: #4fd1c5;
-    color: #000;
-    border: none;
-    font-weight: 600;
+    .descriptionBox {
+        padding: 1.25rem;
+    }
 }

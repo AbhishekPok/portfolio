@@ -6,41 +6,58 @@ import { FaFolder, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 const Projects: React.FC = () => {
     return (
         <section id="projects" className="section container">
-            <h2 className="mono"><span className="accent">02.</span> Projects</h2>
+            <h2><span className="gradient-text">Featured Projects</span></h2>
 
-            <div className={styles.grid}>
+            <div className={styles.projectsList}>
                 {config.projects.map((project, index) => (
-                    <div key={index} className={styles.card}>
-                        <div className={styles.cardHeader}>
-                            <div className={styles.iconBox}>
+                    <div key={index} className={styles.project}>
+                        <div className={styles.image}>
+                            {/* Placeholder / Gradient for now as no image provided in config logic yet */}
+                            <div className={styles.imagePlaceholder}>
                                 <FaFolder />
                             </div>
+                        </div>
+
+                        <div className={styles.content}>
+                            <span className={styles.featured}>Featured Project</span>
+                            <h3 className={styles.title}>
+                                <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+                                    {project.name}
+                                </a>
+                            </h3>
+
+                            <div className={styles.descriptionBox}>
+                                {Array.isArray(project.description) ? (
+                                    <ul>
+                                        {project.description.map((item, i) => (
+                                            <li key={i}>{item}</li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    <p>{project.description}</p>
+                                )}
+                            </div>
+
+                            <ul className={styles.techList}>
+                                {project.tech.map(tech => (
+                                    <li key={tech}>{tech}</li>
+                                ))}
+                            </ul>
+
                             <div className={styles.links}>
                                 {project.links.github && (
-                                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Link">
+                                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                                         <FaGithub />
                                     </a>
                                 )}
-                                {/* @ts-ignore - Demo link might not exist on all types yet */}
-                                {(project.links as any).demo && (
-                                    <a href={(project.links as any).demo} target="_blank" rel="noopener noreferrer" aria-label="Demo Link">
+                                {/* @ts-ignore */}
+                                {project.links.demo && (
+                                    /* @ts-ignore */
+                                    <a href={project.links.demo} target="_blank" rel="noopener noreferrer" aria-label="Demo">
                                         <FaExternalLinkAlt />
                                     </a>
                                 )}
                             </div>
-                        </div>
-
-                        <h3 className={styles.title}>{project.name}</h3>
-                        <ul className={styles.description}>
-                            {(project.description as string[]).map((desc, i) => (
-                                <li key={i}>{desc}</li>
-                            ))}
-                        </ul>
-
-                        <div className={styles.techStack}>
-                            {project.tech.map(tech => (
-                                <span key={tech} className={styles.tag}>{tech}</span>
-                            ))}
                         </div>
                     </div>
                 ))}
