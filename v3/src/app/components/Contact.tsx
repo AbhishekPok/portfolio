@@ -24,9 +24,9 @@ export function Contact() {
 
     setIsSubmitting(true);
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const serviceId = 'service_lwh36n8';
+    const templateId = 'template_efb5qyc';
+    const publicKey = 'fyA2H8TTSL55f1fyP';
 
     // Debug logging for production (will help user see what's missing)
     console.log('Sending message...', {
