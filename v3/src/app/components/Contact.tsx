@@ -1,10 +1,13 @@
+/// <reference types="vite/client" />
 import { motion } from 'motion/react';
-import { Mail, Github, Linkedin, Send, MapPin, Phone } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, MapPin, Phone, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import { personalInfo } from '../data/portfolioData';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 
 export function Contact() {
-  const { email, phone, location, socialLinks } = personalInfo;
+  const { phone, location, socialLinks } = personalInfo;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -12,10 +15,46 @@ export function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast.error('Email configuration is missing. Please check your environment variables.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message,
+          to_name: 'Abhishek',
+        },
+        publicKey
+      );
+
+      toast.success('Message sent successfully! I will get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast.error('Failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -102,10 +141,17 @@ export function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-6 py-4 bg-[#22D3EE] text-[#0B0F14] rounded-lg hover:bg-[#38BDF8] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-[#22D3EE]/20 hover:shadow-[#22D3EE]/40 hover:scale-[1.02]"
+                disabled={isSubmitting}
+                className={`w-full px-6 py-4 bg-[#22D3EE] text-[#0B0F14] rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-[#22D3EE]/20 hover:shadow-[#22D3EE]/40 hover:scale-[1.02] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#38BDF8]'}`}
               >
-                <span className="font-medium">Send Message</span>
-                <Send className="w-4 h-4" />
+                <span className="font-medium">
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </span>
+                {isSubmitting ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
               </button>
             </form>
           </motion.div>
