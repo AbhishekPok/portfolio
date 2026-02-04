@@ -6,7 +6,7 @@ export function Hero() {
   const { techStack, title, tagline } = heroData;
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center px-6 py-32 relative overflow-hidden">
       {/* Background gradient effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-64 w-96 h-96 bg-[#22D3EE] opacity-10 rounded-full blur-3xl"></div>
@@ -25,7 +25,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-block mb-4"
+            className="inline-block mb-6"
           >
             <span className="text-[#22D3EE] text-sm tracking-wider uppercase font-medium">
               Portfolio 2026
@@ -37,7 +37,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-5xl md:text-7xl lg:text-8xl text-[#E5E7EB] mb-4 tracking-tight"
+            className="text-5xl md:text-7xl lg:text-8xl text-[#E5E7EB] mb-6 tracking-tight"
           >
             Abhishek Pokhrel
           </motion.h1>
@@ -47,7 +47,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-2xl md:text-3xl lg:text-4xl text-[#9CA3AF] mb-6"
+            className="text-2xl md:text-3xl lg:text-4xl text-[#9CA3AF] mb-8"
           >
             {title}
           </motion.h2>
@@ -57,7 +57,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-lg md:text-xl text-[#9CA3AF] mb-12 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-[#9CA3AF] mb-16 max-w-3xl mx-auto"
           >
             {tagline}
           </motion.p>
@@ -67,7 +67,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20"
           >
             <button className="group px-8 py-4 bg-[#22D3EE] text-[#0B0F14] rounded-lg hover:bg-[#38BDF8] transition-all duration-300 flex items-center gap-2 shadow-lg shadow-[#22D3EE]/20 hover:shadow-[#22D3EE]/40 hover:scale-105">
               <span className="font-medium">View Projects</span>
@@ -89,7 +89,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex flex-wrap gap-3 justify-center"
+            className="flex flex-wrap gap-4 justify-center"
           >
             {techStack.map((tech, index) => (
               <motion.div
@@ -103,21 +103,21 @@ export function Hero() {
               </motion.div>
             ))}
           </motion.div>
-        </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
+          {/* Scroll indicator */}
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-[#22D3EE]/30 rounded-full flex justify-center pt-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.6 }}
+            className="mt-24 flex justify-center"
           >
-            <div className="w-1.5 h-2 bg-[#22D3EE] rounded-full"></div>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="w-6 h-10 border-2 border-[#22D3EE]/30 rounded-full flex justify-center pt-2"
+            >
+              <div className="w-1.5 h-2 bg-[#22D3EE] rounded-full"></div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
