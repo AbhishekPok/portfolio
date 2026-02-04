@@ -6,7 +6,7 @@ on:
   push:
     branches: ['main']
     paths:
-      - "v2/**"
+      - "v3/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run: 
-        working-directory: v2
+        working-directory: v3
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           # Upload dist folder
-          path: './v2/dist'
+          path: './v3/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
