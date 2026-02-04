@@ -28,14 +28,23 @@ export function Contact() {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+    // Debug logging for production (will help user see what's missing)
+    console.log('Sending message...', {
+      hasServiceId: !!serviceId,
+      hasTemplateId: !!templateId,
+      hasPublicKey: !!publicKey
+    });
+
     if (!serviceId || !templateId || !publicKey) {
-      toast.error('Email configuration is missing. Please check your environment variables.');
+      const errorMsg = 'Email configuration is missing. Please check your environment variables.';
+      console.error(errorMsg);
+      toast.error(errorMsg);
       setIsSubmitting(false);
       return;
     }
 
     try {
-      await emailjs.send(
+      const response = await emailjs.send(
         serviceId,
         templateId,
         {
@@ -47,11 +56,13 @@ export function Contact() {
         publicKey
       );
 
+      console.log('EmailJS Success:', response.status, response.text);
       toast.success('Message sent successfully! I will get back to you soon.');
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch (error: any) {
       console.error('EmailJS Error:', error);
-      toast.error('Failed to send message. Please try again later.');
+      const errorMessage = error?.text || error?.message || 'Failed to send message. Please try again later.';
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
