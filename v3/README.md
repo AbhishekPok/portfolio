@@ -1,7 +1,4 @@
 
-  # Portfolio Website UI Design
-
-  This is a code bundle for Portfolio Website UI Design. The original project is available at https://www.figma.com/design/prbeUqkqFFgauLhcHGrsPW/Portfolio-Website-UI-Design.
 
   ## Running the code
 
