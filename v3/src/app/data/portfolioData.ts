@@ -121,7 +121,7 @@ export const projects = [
         description: 'Full-stack application for managing transactions, featuring summary dashboards, charts, and secure user authentication.',
         tech: ['Django', 'DRF', 'React', 'PostgreSQL', 'REST API'],
         gradient: 'from-[#38BDF8] to-[#22D3EE]',
-        github: 'https://github.com/AbhishekPok',
+        github: 'https://github.com/AbhishekPok/FinTrack',
         demo: '#'
     },
     {
@@ -129,8 +129,16 @@ export const projects = [
         description: 'AI-powered travel assistant that suggests destinations and itineraries via a real-time chatbot interface using GPT API.',
         tech: ['NestJS', 'Angular', 'MongoDB', 'OpenAI', 'TypeScript'],
         gradient: 'from-[#22D3EE] to-[#38BDF8]',
-        github: 'https://github.com/AbhishekPok',
+        github: 'https://github.com/Abhisha-Sharma/travomind',
         demo: '#'
+    },
+    {
+        title: 'Portfolio website',
+        description: 'A small self experimentation about myself. To portray my capability and small introduction over web. ',
+        tech: ['NextJs', 'OpenAI', ],
+        gradient: 'from-[#22D3EE] to-[#38BDF8]',
+        github: 'https://github.com/AbhishekPok/portfolio',
+        demo: 'https://pokhrelabhishek.com.np'
     }
 ];
 
